@@ -13,6 +13,11 @@ const booking = await Booking.create({
     date,
 
 });
+
+    /**
+     * Populando o objeto com base nos seus ids
+     */
+
     await booking.populate('spot').populate('user').execPopulate();
     return res.json(booking);
 
