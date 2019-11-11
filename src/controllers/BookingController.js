@@ -12,7 +12,8 @@ const booking = await Booking.create({
     spot:spot_id,
     date,
 
-})
+});
+    await booking.populate('spot').populate('user').execPopulate();
     return res.json(booking);
 
     }
