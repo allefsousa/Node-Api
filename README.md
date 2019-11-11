@@ -17,5 +17,11 @@ Dependeci MongoDB
 yarn add mongoose
 ```
 
+MultiPart Files
+
+```bash
+yarn add multer
+```
+
 Database : MongoDB 
 
