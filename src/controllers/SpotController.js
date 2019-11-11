@@ -3,10 +3,33 @@ const User = require ('../models/User');
 
 
 module.exports = {
+    /**
+     * @param {retornando uma listagem} req 
+     * @param {*} res 
+     */
+    async index(req,res){
+        const {tech} = req.query;
+        const spots = await Spot.find({techs:tech});
+
+        if(!spots){
+            return res.status(404).json({error:"Não Existem registros da tecnologias pesquisada."})
+        }else{
+            return res.json(spots);
+        }
+
+
+
+
+
+    },
+
+
+
     async store(req,res){
         // console.log(req.body);
         // console.log(req.file);
 
+        //** Recebendo mutpart */
         const {filename} = req.file
         const {company, techs, price} = req.body
         const {user_id} = req.headers;

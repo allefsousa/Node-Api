@@ -11,7 +11,10 @@ const upload = multer(UploadConfig); // config imagens da aplicação
 
 routes.post('/sessions',SessionController.store)
 
+
 routes.post('/spots',upload.single('thumbnail'),SpotController.store)
+routes.get('/spots',SpotController.index)
+
 
 // exportando as totas
 module.exports = routes
