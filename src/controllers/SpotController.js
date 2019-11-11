@@ -17,10 +17,6 @@ module.exports = {
             return res.json(spots);
         }
 
-
-
-
-
     },
 
 
